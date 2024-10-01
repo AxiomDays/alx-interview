@@ -10,7 +10,6 @@ def runTheMiddle(sumlist):
     for k in range(len(sumlist)):
         if k == (len(sumlist)-1):
             break
-        print("funci is {}, and sumlist is {}, sum is {}".format(k, sumlist[k], sumlist[k]+sumlist[k+1]))
         templist2.append(sumlist[k]+sumlist[k+1])
 
     return templist2
@@ -27,7 +26,6 @@ def pascal_triangle(n):
         templist = []
         tempcounter = 0
         for j in range(i+1):
-            print("j is {} and i is {}".format(j, i))
             if j == 0:
                 """ each row always starts with 1 """
                 templist.append(1)
@@ -41,9 +39,7 @@ def pascal_triangle(n):
                 templist.append(1)
             else:
                 continue
-        print("templist:{}".format(templist))
         mainlist.append(templist)
 
-    print("{}".format(mainlist))
     return mainlist
 
