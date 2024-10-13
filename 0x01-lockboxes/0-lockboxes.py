@@ -2,6 +2,7 @@
 """ function that does the folowing """
 
 def canUnlockAll(boxes):
+    """ function that checks if all boxes can open """
     total_boxes = len(boxes)
     setofkeys = [0]
     counter = 0
