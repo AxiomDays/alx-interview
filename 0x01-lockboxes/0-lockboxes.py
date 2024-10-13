@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-""" function that performs the aforementioned """
+""" function that does the folowing """
+
 def canUnlockAll(boxes):
-    """ function that checks if all boxes can be unlocked """
-    open = set([0])
-    closed = set(boxes[0]).difference(open)
+    total_boxes = len(boxes)
+    setofkeys = [0]
+    counter = 0
+    index = 0 
+    
+    while index < len(setofkeys):
+        setkey = setofkeys[index]
+        for key in boxes[setkey]:
+            if 0 < key < total_boxes and key not in setofkeys:
+                setofkeys.append(key)
+                counter += 1
+        index += 1
 
-    while len(closed) > 0:
-        key = closed.pop()
-
-        if key not in open:
-            open.add(key)
-            closed = closed.union(boxes[key]).difference(open)
-
-    return len(open) == len(boxes)
+    return counter == total_boxes - 1
