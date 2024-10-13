@@ -3,7 +3,7 @@
 def canUnlockAll(boxes):
     """ function that checks if all boxes can be unlocked """
     open = set([0])
-    closed = set(boxes[0])
+    closed = set(boxes[0]).difference(open)
 
     while len(closed) > 0:
         key = closed.pop()
