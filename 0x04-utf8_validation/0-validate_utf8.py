@@ -11,7 +11,10 @@ def validUTF8(data):
     for i in data:
         temp.append(dec2bin(i))
     """print(temp, end = ' ')"""
-    return checkUTF8(temp)
+    if data = []:
+        return True
+    else:
+        return checkUTF8(temp)
 
 def dec2bin(num):
     """

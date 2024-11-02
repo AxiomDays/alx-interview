@@ -20,5 +20,5 @@ print(validUTF8(data))
 data = [235, 140]
 print(validUTF8(data))
 
-data = [345, 467]
+data = []
 print(validUTF8(data)) 
