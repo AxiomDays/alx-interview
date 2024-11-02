@@ -16,7 +16,10 @@ def dec2bin(num):
     """
     converts decimals to binary
     """
-    return format(num,'08b')
+    temp = format(num,'08b')
+    if len(format(num,'08b')) > 8:
+        temp = format(num,'08b')[1:]
+    return temp
 
 def checkUTF8(templist):
     """
