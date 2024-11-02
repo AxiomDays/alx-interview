@@ -10,6 +10,7 @@ def validUTF8(data):
     temp = []
     for i in data:
         temp.append(dec2bin(i))
+    """print(temp, end = ' ')"""
     return checkUTF8(temp)
 
 def dec2bin(num):
@@ -28,10 +29,13 @@ def checkUTF8(templist):
     multibyte = 0
     truth = 0
     for elem in templist:
-
+        truth = 0
         if multibyte > 0:
-            if elem[:2] == '10':
+            if elem[:2] == '10' and multibyte == 1:
                 truth = 1
+                multibyte -= 1
+                continue
+            elif elem[:2] == '10':
                 multibyte -= 1
                 continue
             else:
