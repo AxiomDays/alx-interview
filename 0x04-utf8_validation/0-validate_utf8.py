@@ -1,15 +1,27 @@
 #!/usr/bin/python3
+"""
+module for checking the UTF-8 validity of a series of integers
+"""
 
 def validUTF8(data):
+    """
+    main function
+    """
     temp = []
     for i in data:
         temp.append(dec2bin(i))
     return checkUTF8(temp)
 
 def dec2bin(num):
+    """
+    converts decimals to binary
+    """
     return format(num,'08b')
 
 def checkUTF8(templist):
+    """
+    checks each integer and if need be the subsequent integer
+    """
     multibyte = 0
     truth = 0
     for elem in templist:
