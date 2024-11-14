@@ -1,32 +1,26 @@
 #!/usr/bin/node
 
 const request = require('request');
-const movieId = process.argv[2]
+const movieId = process.argv[2];
 
-function firstGet(){
-	i == 0
-	request(`https://swapi-api.alx-tools.com/api/films/${movieId}`, async function(error, response, body) {
-	function recurse(i){
-		const res = JSON.parse(body) // Print the HTML for the Google homepage.
-		truth(res, i)
-		recurse(i++)
+function firstGet () {
+  request(`https://swapi-api.alx-tools.com/api/films/${movieId}`, function (error, response, body) {
+    const res = JSON.parse(body).characters;
+    const newArr = res.map(
+      url => new Promise((resolve, reject) => {
+        request(url, function (error, response, innerBody) {
+          if (error) {
+            reject(error);
+          }
+          resolve(JSON.parse(innerBody).name);
+        });
+      }));
 
-	}
-	
-});
+    Promise.all(newArr)
+      .then(names => console.log(names.join('\n')))
+      .catch(allErr => console.log(allErr));
+  });
 }
-
-function truth(res, j){
-	request(res["characters"][j], async function(error, response, innerBody){
-	console.log(JSON.parse(innerBody)["name"]);
-});
+if (process.argv.length > 2) {
+  firstGet();
 }
-
-/*function theLoop(res){
-for (let i = 0; i < res["characters"].length; i++){
-	console.log("")
-	truth(res, i);
-}
-}*/
-
-firstGet();
