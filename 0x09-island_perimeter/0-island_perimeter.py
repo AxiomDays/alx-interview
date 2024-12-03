@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""
+island perimeter main function
+"""
 
 def island_perimeter(grid):
+    """
+    funtion that checks the perimeter
+    of an island made of 1s
+    """
     perimeter = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
