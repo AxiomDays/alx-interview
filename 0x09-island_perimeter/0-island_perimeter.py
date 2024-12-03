@@ -32,6 +32,10 @@ def island_perimeter(grid):
                         perimeter += 1
                 except IndexError:
                     perimeter += 1
+                if i == 0:
+                    perimeter += 1
+                if j == 0:
+                    perimeter += 1
     return perimeter
 
 
