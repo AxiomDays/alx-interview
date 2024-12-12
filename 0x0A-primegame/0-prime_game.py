@@ -3,6 +3,7 @@
 def isWinner(x, nums):
     BenWR=0
     MariaWR=0
+    RC=x
 
     for val in nums:
         if val == 0: continue
