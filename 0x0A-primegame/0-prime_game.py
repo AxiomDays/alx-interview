@@ -17,6 +17,8 @@ def isWinner(x, nums):
     BenWR=0
     MariaWR=0
 
+    if (nums == [] or x <= 0): return None
+
     for val in nums:
         if val == 0: continue
         temp_arr = list(range(1, val+1))
