@@ -1,9 +1,21 @@
 #!/usr/bin/python3
+"""
+Script that determines the winner of
+a prime game
+"""
 
 def isWinner(x, nums):
+    """
+    x: number of rounds
+    nums: array consisting of numbers
+    """
+
+    """
+    winrate for Ben and Maria
+    """
+
     BenWR=0
     MariaWR=0
-    RC=x
 
     for val in nums:
         if val == 0: continue
@@ -22,6 +34,10 @@ def isWinner(x, nums):
         return None
 
 def sealOfOrichalcos(n):
+    """
+    function that returns a list of prime numbers
+    """
+
     ret = []
     prime = [True for i in range(n+1)]
     p = 2
